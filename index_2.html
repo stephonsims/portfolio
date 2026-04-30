@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stephon Sims — Creative & Content Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #0a0a0a;
+  --white: #f5f2ed;
+  --accent: #c8f55a;
+  --accent-dark: #9dbf3a;
+  --mid: #141414;
+  --mid2: #1c1c1c;
+  --muted: #666;
+  --border: rgba(255,255,255,0.07);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2.5rem; border-bottom: 0.5px solid var(--border); background: rgba(10,10,10,0.92); backdrop-filter: blur(16px); }
+.nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: var(--white); text-decoration: none; }
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.75rem; list-style: none; }
+.nav-links a { color: var(--muted); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--accent) !important; color: var(--black) !important; padding: 0.4rem 1rem; border-radius: 2px; font-weight: 500 !important; }
+
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 80px 2.5rem 4rem; position: relative; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 40%, rgba(200,245,90,0.035) 0%, transparent 65%); pointer-events: none; }
+.hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.75rem; }
+.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
+h1 { font-family: 'Syne', sans-serif; font-size: clamp(4rem, 11vw, 10.5rem); font-weight: 800; line-height: 0.87; letter-spacing: -0.045em; margin-bottom: 3rem; }
+h1 em { color: var(--accent); font-style: normal; display: block; }
+.hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; border-top: 0.5px solid var(--border); padding-top: 2rem; }
+.hero-desc { max-width: 430px; color: var(--muted); font-size: 0.98rem; line-height: 1.8; font-weight: 300; }
+.hero-desc strong { color: var(--white); font-weight: 500; }
+.hero-right { display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-end; }
+.hero-stats { display: flex; gap: 2.5rem; }
+.hstat-num { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1; }
+.hstat-lbl { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 0.2rem; }
+.hero-btns { display: flex; gap: 0.75rem; }
+.btn-p { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: var(--black); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 0.85rem 1.6rem; border-radius: 2px; transition: all 0.2s; }
+.btn-p:hover { background: var(--accent-dark); transform: translateY(-2px); }
+.btn-g { display: inline-flex; align-items: center; background: transparent; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 0.85rem 1.4rem; border: 0.5px solid var(--border); border-radius: 2px; transition: all 0.2s; }
+.btn-g:hover { color: var(--white); border-color: rgba(255,255,255,0.18); }
+
+.marquee-wrap { overflow: hidden; border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); padding: 0.85rem 0; background: var(--mid); }
+.marquee-track { display: flex; gap: 2.5rem; animation: marquee 28s linear infinite; width: max-content; }
+.marquee-track span { font-family: 'Syne', sans-serif; font-size: 0.67rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.dot { color: var(--accent) !important; font-size: 0.45rem !important; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+section { padding: 5.5rem 2.5rem; border-bottom: 0.5px solid var(--border); }
+.sec-label { font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+.sec-label::before { content: ''; width: 22px; height: 1px; background: var(--accent); }
+.sec-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem, 4.5vw, 3.25rem); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 3rem; }
+
+.about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: start; }
+.about-p { color: var(--muted); font-weight: 300; font-size: 1.02rem; line-height: 1.85; margin-bottom: 1.2rem; }
+.about-p strong { color: var(--white); font-weight: 500; }
+.avail { display: inline-flex; align-items: center; gap: 0.6rem; border: 0.5px solid rgba(200,245,90,0.25); padding: 0.65rem 1.1rem; border-radius: 2px; margin-top: 1.5rem; }
+.avail-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: pulse 2.5s ease infinite; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.35;} }
+.avail span { font-size: 0.75rem; color: var(--accent); letter-spacing: 0.05em; font-family: 'Syne', sans-serif; font-weight: 700; }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 0.5px solid var(--border); margin-bottom: 1.5rem; }
+.sbox { background: var(--black); padding: 1.6rem 1.25rem; }
+.snum { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem; letter-spacing: -0.04em; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
+.slbl { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.skill-inline { background: var(--mid); border: 0.5px solid var(--border); padding: 1.25rem 1.5rem; }
+.skill-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.skill-pill { font-size: 0.72rem; color: var(--muted); border: 0.5px solid var(--border); padding: 0.25rem 0.65rem; border-radius: 1px; letter-spacing: 0.04em; }
+
+.spotlight { background: var(--mid); padding: 2.75rem; border: 0.5px solid var(--border); border-radius: 2px; position: relative; overflow: hidden; margin-bottom: 3rem; }
+.spotlight::after { content: 'FOTS'; position: absolute; right: -2rem; top: -0.5rem; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 8rem; color: rgba(200,245,90,0.025); pointer-events: none; line-height: 1; }
+.sp-tag { font-size: 0.63rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+.sp-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2rem; color: var(--white); margin-bottom: 0.75rem; letter-spacing: -0.03em; }
+.sp-desc { color: var(--muted); font-weight: 300; line-height: 1.8; max-width: 580px; margin-bottom: 1.75rem; font-size: 0.95rem; }
+.sp-metrics { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+.mval { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--accent); letter-spacing: -0.03em; }
+.mlbl { font-size: 0.67rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.15rem; }
+
+.exp-list { display: flex; flex-direction: column; }
+.exp-item { display: grid; grid-template-columns: 175px 1fr; gap: 2.5rem; padding: 2rem 0; border-bottom: 0.5px solid var(--border); align-items: start; }
+.exp-item:last-child { border-bottom: none; }
+.exp-co { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.2rem; }
+.exp-dates { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+.exp-role { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--white); margin-bottom: 0.55rem; }
+.exp-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.78; font-weight: 300; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.85rem; }
+.tag { font-size: 0.65rem; letter-spacing: 0.07em; text-transform: uppercase; border: 0.5px solid var(--border); color: var(--muted); padding: 0.22rem 0.6rem; border-radius: 1px; }
+
+.filter-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.fbtn { background: transparent; border: 0.5px solid var(--border); color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; padding: 0.4rem 1rem; cursor: pointer; border-radius: 1px; transition: all 0.2s; }
+.fbtn:hover { color: var(--white); }
+.fbtn.active { background: var(--accent); color: var(--black); border-color: var(--accent); font-weight: 500; }
+
+.photo-grid { columns: 3; column-gap: 5px; }
+.photo-item { break-inside: avoid; margin-bottom: 5px; position: relative; overflow: hidden; cursor: pointer; }
+.photo-item img { width: 100%; display: block; transition: transform 0.5s ease; }
+.photo-item:hover img { transform: scale(1.04); }
+.photo-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%); display: flex; align-items: flex-end; padding: 0.85rem; opacity: 0; transition: opacity 0.3s; }
+.photo-item:hover .photo-overlay { opacity: 1; }
+.photo-overlay span { font-size: 0.63rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-family: 'Syne', sans-serif; font-weight: 700; }
+.photo-item.hidden { display: none; }
+
+.yt-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: 2px; }
+.yt-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.vid-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+.vid-card { background: var(--mid); border: 0.5px solid var(--border); border-radius: 2px; overflow: hidden; }
+.vid-card video { width: 100%; display: block; max-height: 260px; object-fit: cover; background: #000; }
+.vid-info { padding: 1.1rem 1.4rem; }
+.vid-tag { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem; }
+.vid-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--white); margin-bottom: 0.3rem; }
+.vid-desc { font-size: 0.82rem; color: var(--muted); font-weight: 300; }
+.vid-kilby { background: var(--mid); border: 0.5px solid rgba(200,245,90,0.15); border-radius: 2px; padding: 1.75rem 2rem; display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap; }
+.vk-icon { width: 48px; height: 48px; background: var(--accent); border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.vk-icon svg { width: 20px; height: 20px; }
+.vk-text h3 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--white); margin-bottom: 0.3rem; }
+.vk-text p { font-size: 0.82rem; color: var(--muted); font-weight: 300; line-height: 1.65; }
+.vk-text small { font-size: 0.72rem; color: #444; display: block; margin-top: 0.4rem; }
+
+.design-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.25rem; }
+.design-card { background: var(--mid); border: 0.5px solid var(--border); border-radius: 2px; overflow: hidden; transition: border-color 0.2s; }
+.design-card:hover { border-color: rgba(200,245,90,0.25); }
+.design-card img { width: 100%; display: block; transition: transform 0.4s ease; }
+.design-card:hover img { transform: scale(1.02); }
+.design-info { padding: 1.1rem 1.4rem; }
+.design-cat { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem; }
+.design-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.92rem; color: var(--white); margin-bottom: 0.3rem; }
+.design-desc { font-size: 0.8rem; color: var(--muted); font-weight: 300; }
+.design-placeholder { background: #111; padding: 3rem; display: flex; align-items: center; justify-content: center; min-height: 180px; }
+.dp-inner { text-align: center; }
+.dp-inner .big { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; }
+.dp-inner .small { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: #444; margin-top: 0.4rem; }
+
+.edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border); border: 0.5px solid var(--border); }
+.edu-card { background: var(--black); padding: 1.6rem 1.4rem; }
+.edu-school { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.45rem; }
+.edu-degree { font-size: 0.92rem; font-weight: 500; color: var(--white); margin-bottom: 0.3rem; }
+.edu-detail { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
+.badge { display: inline-block; margin-top: 0.5rem; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.18rem 0.55rem; border-radius: 1px; }
+.badge.done { background: rgba(200,245,90,0.1); color: var(--accent); }
+.badge.wip { background: rgba(255,255,255,0.05); color: var(--muted); }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; }
+.contact-big { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 0.9; letter-spacing: -0.04em; }
+.contact-big em { color: var(--accent); font-style: normal; display: block; }
+.contact-sub { color: var(--muted); font-size: 0.9rem; margin-top: 1.5rem; font-weight: 300; line-height: 1.75; max-width: 320px; }
+.clinks { display: flex; flex-direction: column; border: 0.5px solid var(--border); }
+.clink { display: flex; align-items: center; gap: 1rem; color: var(--muted); text-decoration: none; font-size: 0.85rem; padding: 1.1rem 1.4rem; border-bottom: 0.5px solid var(--border); transition: all 0.2s; }
+.clink:last-child { border-bottom: none; }
+.clink:hover { color: var(--white); background: var(--mid); }
+.clink-badge { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(200,245,90,0.08); padding: 0.18rem 0.5rem; border-radius: 1px; margin-left: auto; }
+
+footer { padding: 1.4rem 2.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: var(--muted); }
+.foot-r { display: flex; gap: 2rem; align-items: center; }
+.foot-status { display: flex; align-items: center; gap: 0.45rem; }
+.foot-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2.5s ease infinite; }
+
+.fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .hero { padding: 80px 1.25rem 3rem; }
+  section { padding: 4rem 1.25rem; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
+  .photo-grid { columns: 2; }
+  .hero-right { align-items: flex-start; }
+  footer { flex-direction: column; gap: 0.6rem; }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 3.5rem; }
+  .photo-grid { columns: 1; }
+  .hero-stats { gap: 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#top">S.<span>SIMS</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#photography">Photos</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#design">Design</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-eyebrow">Music · Culture · Content · Greensboro, NC</div>
+  <h1>Stephon<em>Sims.</em></h1>
+  <div class="hero-bottom">
+    <div>
+      <p class="hero-desc"><strong>Creative at Apple. Editor in Chief of FreshOffTheScene.</strong> I build content, shoot artists, edit video, and tell stories that actually resonate — across photo, video, and design.</p>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div><div class="hstat-num">41.7K</div><div class="hstat-lbl">Monthly Views</div></div>
+        <div><div class="hstat-num">10K+</div><div class="hstat-lbl">Website/mo</div></div>
+        <div><div class="hstat-num">212%</div><div class="hstat-lbl">Mag ROI</div></div>
+      </div>
+      <div class="hero-btns">
+        <a class="btn-p" href="#work">View Work →</a>
+        <a class="btn-g" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Short-Form Video</span><span class="dot">✦</span><span>Concert Photography</span><span class="dot">✦</span><span>Content Strategy</span><span class="dot">✦</span><span>Adobe Creative Suite</span><span class="dot">✦</span><span>Live Event Coverage</span><span class="dot">✦</span><span>Brand Design</span><span class="dot">✦</span><span>Editorial Leadership</span><span class="dot">✦</span><span>Digital Publishing</span><span class="dot">✦</span><span>FreshOffTheScene</span><span class="dot">✦</span><span>Kilby Block Party</span><span class="dot">✦</span>
+    <span>Short-Form Video</span><span class="dot">✦</span><span>Concert Photography</span><span class="dot">✦</span><span>Content Strategy</span><span class="dot">✦</span><span>Adobe Creative Suite</span><span class="dot">✦</span><span>Live Event Coverage</span><span class="dot">✦</span><span>Brand Design</span><span class="dot">✦</span><span>Editorial Leadership</span><span class="dot">✦</span><span>Digital Publishing</span><span class="dot">✦</span><span>FreshOffTheScene</span><span class="dot">✦</span><span>Kilby Block Party</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="sec-label fade-in">About</div>
+  <div class="about-grid">
+    <div class="fade-in">
+      <div class="sec-title">Creative at the core.<br>Strategist by nature.</div>
+      <p class="about-p">I'm a Greensboro-based creative with a degree in <strong>Advertising & Graphic Design</strong> and hands-on experience across content production, photography, videography, and brand strategy.</p>
+      <p class="about-p">At <strong>Apple</strong>, I translate complex technology into engaging, human experiences every day. As <strong>Editor in Chief of FreshOffTheScene</strong>, I co-founded a music and culture publication — growing an audience, securing a Live Nation partnership, and producing content that resonates.</p>
+      <p class="about-p">I've shot major festivals, built brand identities, directed recaps, and designed graphics for real clients. I'm passionate about <strong>music, sports, and culture</strong> — and I'm ready to bring that full-time to a company doing meaningful work in media and content.</p>
+      <div class="avail"><div class="avail-dot"></div><span>Open to Full-Time — Remote & Select Relocation</span></div>
+    </div>
+    <div class="fade-in">
+      <div class="stat-grid">
+        <div class="sbox"><div class="snum">41.7K</div><div class="slbl">Monthly IG Views</div></div>
+        <div class="sbox"><div class="snum">10K+</div><div class="slbl">Website Monthly</div></div>
+        <div class="sbox"><div class="snum">212%</div><div class="slbl">Mag Launch Profit</div></div>
+        <div class="sbox"><div class="snum">3–5×</div><div class="slbl">Published Weekly</div></div>
+      </div>
+      <div class="skill-inline">
+        <div style="font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">Toolkit</div>
+        <div class="skill-row">
+          <span class="skill-pill">Premiere Pro</span><span class="skill-pill">After Effects</span><span class="skill-pill">Final Cut Pro</span><span class="skill-pill">CapCut</span><span class="skill-pill">Photoshop</span><span class="skill-pill">Illustrator</span><span class="skill-pill">Canva</span><span class="skill-pill">Instagram</span><span class="skill-pill">TikTok</span><span class="skill-pill">YouTube</span><span class="skill-pill">Editorial Planning</span><span class="skill-pill">Brand Strategy</span><span class="skill-pill">Live Events</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="sec-label fade-in">Experience</div>
+  <div class="sec-title fade-in">Where I've built things.</div>
+  <div class="spotlight fade-in">
+    <div class="sp-tag">Featured — Music & Culture Media</div>
+    <div class="sp-name">FreshOffTheScene</div>
+    <p class="sp-desc">A music and culture publication I co-founded dedicated to covering the most diverse voices in the scene — from emerging artists to major festival coverage. Editorial strategy, photography, video production, and live event access all under one roof.</p>
+    <div class="sp-metrics">
+      <div><div class="mval">41.7K</div><div class="mlbl">Monthly IG Views</div></div>
+      <div><div class="mval">Live Nation</div><div class="mlbl">Partnership</div></div>
+      <div><div class="mval">200+</div><div class="mlbl">Magazines Sold</div></div>
+      <div><div class="mval">3–5×/wk</div><div class="mlbl">Content Cadence</div></div>
+    </div>
+  </div>
+  <div class="exp-list">
+    <div class="exp-item fade-in">
+      <div><div class="exp-co">Apple</div><div class="exp-dates">06/2024 – Present<br>Greensboro, NC</div></div>
+      <div>
+        <div class="exp-role">Creative Specialist</div>
+        <p class="exp-desc">Translate complex technology into accessible, engaging experiences for customers of all skill levels. Facilitate Today at Apple sessions achieving 100% Delivered Bookable (MTD) and 97% Likelihood to Recommend. Collaborate cross-functionally across Genius Bar and Specialist teams.</p>
+        <div class="tags"><span class="tag">Storytelling</span><span class="tag">Live Programming</span><span class="tag">Customer Experience</span></div>
+      </div>
+    </div>
+    <div class="exp-item fade-in">
+      <div><div class="exp-co">FreshOffTheScene</div><div class="exp-dates">04/2023 – Present<br>Remote</div></div>
+      <div>
+        <div class="exp-role">Editor in Chief</div>
+        <p class="exp-desc">Co-founded and lead a music and culture publication. Produce short-form video, photography, and editorial content 3–5x per week. Grew to 41.7K monthly Instagram views and 5–10K monthly website visitors. Secured Live Nation partnership. Launched print magazine — 200+ copies sold, 212% profit increase.</p>
+        <div class="tags"><span class="tag">Video Production</span><span class="tag">Concert Photography</span><span class="tag">PR</span><span class="tag">Live Nation</span><span class="tag">Print Design</span></div>
+      </div>
+    </div>
+    <div class="exp-item fade-in">
+      <div><div class="exp-co">Kilby Block Party</div><div class="exp-dates">May 2025<br>Salt Lake City, UT</div></div>
+      <div>
+        <div class="exp-role">Photojournalist & Videographer</div>
+        <p class="exp-desc">Photographed and filmed Kilby Block Party festival across multiple stages. Captured performances by Weezer, Wisp, Wallows, Suki Waterhouse, and more. Produced the official FOTS × Kilby Block Party 4K recap.</p>
+        <div class="tags"><span class="tag">Festival Coverage</span><span class="tag">4K Video</span><span class="tag">Event Photography</span></div>
+      </div>
+    </div>
+    <div class="exp-item fade-in">
+      <div><div class="exp-co">Best Buy</div><div class="exp-dates">05/2023 – 06/2024<br>Greensboro, NC</div></div>
+      <div>
+        <div class="exp-role">Supervisor</div>
+        <p class="exp-desc">Managed team scheduling, coaching, and daily operations. Provided technical guidance to customers on AV and photography equipment. Reinforced service standards and maintained inventory documentation.</p>
+        <div class="tags"><span class="tag">Leadership</span><span class="tag">Consumer Tech</span><span class="tag">Operations</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="photography">
+  <div class="sec-label fade-in">Photography</div>
+  <div class="sec-title fade-in">Capturing the scene.</div>
+  <div class="filter-row fade-in">
+    <button class="fbtn active" data-filter="all">All Work</button>
+    <button class="fbtn" data-filter="kilby">Kilby Block Party</button>
+    <button class="fbtn" data-filter="editorial">Editorial</button>
+    <button class="fbtn" data-filter="portrait">Portrait</button>
+  </div>
+  <div class="photo-grid fade-in">
+    <div class="photo-item" data-cat="kilby"><img src="DSC03089.jpg" alt="Live performance at Kilby" loading="lazy" /><div class="photo-overlay"><span>Kilby Block Party</span></div></div>
+    <div class="photo-item" data-cat="editorial"><img src="090A0141.jpg" alt="Editorial — green" loading="lazy" /><div class="photo-overlay"><span>Editorial</span></div></div>
+    <div class="photo-item" data-cat="kilby"><img src="Gary.jpg" alt="Gary Numan — Kilby" loading="lazy" /><div class="photo-overlay"><span>Kilby · Gary Numan</span></div></div>
+    <div class="photo-item" data-cat="kilby"><img src="RV-13.jpg" alt="Artist at Kilby" loading="lazy" /><div class="photo-overlay"><span>Kilby Block Party</span></div></div>
+    <div class="photo-item" data-cat="editorial"><img src="order-4.jpg" alt="Motion blur red" loading="lazy" /><div class="photo-overlay"><span>Editorial</span></div></div>
+    <div class="photo-item" data-cat="kilby"><img src="Tia-4.jpg" alt="Vocalist — Kilby" loading="lazy" /><div class="photo-overlay"><span>Kilby Block Party</span></div></div>
+    <div class="photo-item" data-cat="kilby"><img src="WEEZ-1.jpg" alt="Weezer — Kilby" loading="lazy" /><div class="photo-overlay"><span>Kilby · Weezer</span></div></div>
+    <div class="photo-item" data-cat="editorial"><img src="Carseat-2.jpg" alt="Motion blur editorial" loading="lazy" /><div class="photo-overlay"><span>Editorial · Carseat Headrest</span></div></div>
+    <div class="photo-item" data-cat="kilby"><img src="WALLOW-2.jpg" alt="Wallows — Kilby" loading="lazy" /><div class="photo-overlay"><span>Kilby · Wallows</span></div></div>
+    <div class="photo-item" data-cat="kilby"><img src="wisp-1.jpg" alt="Wisp — Kilby" loading="lazy" /><div class="photo-overlay"><span>Kilby · Wisp</span></div></div>
+    <div class="photo-item" data-cat="portrait"><img src="OVER-4.jpg" alt="Portrait" loading="lazy" /><div class="photo-overlay"><span>Portrait</span></div></div>
+    <div class="photo-item" data-cat="kilby"><img src="Bk-06.jpg" alt="Live performance B&W" loading="lazy" /><div class="photo-overlay"><span>Live Performance</span></div></div>
+    <div class="photo-item" data-cat="kilby"><img src="George-5-2.jpg" alt="Concert detail" loading="lazy" /><div class="photo-overlay"><span>Concert Detail</span></div></div>
+    <div class="photo-item" data-cat="kilby"><img src="hollis.webp" alt="Stage performance" loading="lazy" /><div class="photo-overlay"><span>Live Performance</span></div></div>
+  </div>
+</section>
+
+<section id="video">
+  <div class="sec-label fade-in">Video Production</div>
+  <div class="sec-title fade-in">Short-form recaps & coverage.</div>
+  <div class="vid-grid fade-in">
+    <div class="vid-card">
+      <div class="yt-wrap"><iframe src="https://www.youtube.com/embed/TWC_CDUcc6k" title="In Tha Fest ATL Recap" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid-info">
+        <div class="vid-tag">FreshOffTheScene · Recap</div>
+        <div class="vid-title">In Tha Fest ATL — Recap</div>
+        <p class="vid-desc">Full festival recap coverage from In Tha Fest, Atlanta. Shot, edited, and produced for FreshOffTheScene.</p>
+      </div>
+    </div>
+    <div class="vid-card">
+      <div class="yt-wrap"><iframe src="https://www.youtube.com/embed/L-toRoBn0ik" title="ITBA Recap" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid-info">
+        <div class="vid-tag">FreshOffTheScene · Recap</div>
+        <div class="vid-title">ITBA — Recap</div>
+        <p class="vid-desc">Event recap produced and edited end-to-end for FreshOffTheScene. Full video production from shoot to post.</p>
+      </div>
+    </div>
+  </div>
+  <div class="vid-kilby fade-in" style="padding:0; overflow:hidden; display:block;">
+    <div class="yt-wrap" style="border-radius:0;"><iframe src="https://www.youtube.com/embed/GjGcsGi77-Q" title="FOTS x Kilby Block Party 4K Recap" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div style="padding:1.5rem 2rem;">
+      <div class="vid-tag">FreshOffTheScene × Kilby Block Party · 4K</div>
+      <div class="vid-title" style="font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; color:var(--white); margin-bottom:0.35rem;">FOTS × Kilby Block Party — Official 4K Recap</div>
+      <p class="vid-desc">The official FreshOffTheScene × Kilby Block Party 2025 recap. Features Weezer, Wisp, Wallows, Suki Waterhouse, Gary Numan, and more.</p>
+    </div>
+  </div>
+</section>
+
+<section id="design">
+  <div class="sec-label fade-in">Graphic Design</div>
+  <div class="sec-title fade-in">Brand work & visual design.</div>
+  <div class="design-grid fade-in">
+    <div class="design-card">
+      <img src="brand_mock_up.png" alt="Brand identity mockup" />
+      <div class="design-info">
+        <div class="design-cat">Brand Identity</div>
+        <div class="design-title">Restaurant Brand Mockup</div>
+        <p class="design-desc">Full brand identity system including stationery, packaging, signage, and business collateral. Adobe Illustrator & Photoshop.</p>
+      </div>
+    </div>
+    <div class="design-card">
+      <img src="BASEBALL-PROMO.jpg" alt="Guilford Tech Titans baseball promo" />
+      <div class="design-info">
+        <div class="design-cat">Sports Marketing · GTCC</div>
+        <div class="design-title">Guilford Tech Titans — Baseball Promo</div>
+        <p class="design-desc">Promotional graphic for GTCC Titans baseball. Composite design with photo manipulation, custom typography, and layered effects.</p>
+      </div>
+    </div>
+    <div class="design-card">
+      <div class="design-placeholder"><div class="dp-inner"><div class="big">FOTS</div><div class="small">Magazine Layout</div></div></div>
+      <div class="design-info">
+        <div class="design-cat">Editorial Design · Print</div>
+        <div class="design-title">FreshOffTheScene — Print Magazine</div>
+        <p class="design-desc">Multi-page editorial layout design for FOTS's inaugural print run. Typography, photo placement, and print-ready formatting in InDesign.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="sec-label fade-in">Education & Certifications</div>
+  <div class="sec-title fade-in">Always building.</div>
+  <div class="edu-grid fade-in">
+    <div class="edu-card">
+      <div class="edu-school">Guilford Technical CC</div>
+      <div class="edu-degree">AAS — Advertising & Graphic Design</div>
+      <div class="edu-detail">GPA: 3.8 · Jamestown, NC · 2019–2022</div>
+      <div class="badge done">Completed</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-school">Google</div>
+      <div class="edu-degree">Foundations of Cybersecurity</div>
+      <div class="edu-detail">Issued May 2025</div>
+      <div class="badge done">Certified</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-school">IBM · Coursera</div>
+      <div class="edu-degree">Digital Marketing & Growth Hacking with GenAI</div>
+      <div class="edu-detail">Specialization · 2025</div>
+      <div class="badge wip">In Progress</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-school">CompTIA · Coursera</div>
+      <div class="edu-degree">Security+ Certification Prep</div>
+      <div class="edu-detail">Specialization · 2025</div>
+      <div class="badge wip">In Progress</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-school">Lucy Ragsdale High School</div>
+      <div class="edu-degree">High School Diploma</div>
+      <div class="edu-detail">Jamestown, NC</div>
+      <div class="badge done">Completed</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec-label fade-in">Contact</div>
+  <div class="contact-grid">
+    <div class="fade-in">
+      <div class="contact-big">Let's<em>Connect.</em></div>
+      <p class="contact-sub">Open to full-time roles in content creation, social media, and digital publishing. Remote preferred — also open to Nashville, Atlanta, Charlotte, and select relocation for the right company.</p>
+    </div>
+    <div class="fade-in">
+      <div class="clinks">
+        <a class="clink" href="mailto:kriseansims@gmail.com"><span>✉</span><span>kriseansims@gmail.com</span><span class="clink-badge">Email</span></a>
+        <a class="clink" href="https://linkedin.com/in/stephon-sims-30a25b266" target="_blank"><span>in</span><span>linkedin.com/in/stephon-sims</span><span class="clink-badge">LinkedIn</span></a>
+        <a class="clink" href="https://www.freshoffthescene.com" target="_blank"><span>✦</span><span>freshoffthescene.com</span><span class="clink-badge">Publication</span></a>
+        <a class="clink" href="https://www.instagram.com/freshoffthescenemag" target="_blank"><span>ig</span><span>@freshoffthescenemag</span><span class="clink-badge">Instagram</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Stephon Sims · All Rights Reserved</span>
+  <div class="foot-r">
+    <div class="foot-status"><div class="foot-dot"></div><span>Open to opportunities</span></div>
+    <span>Greensboro, NC</span>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  document.querySelectorAll('.fbtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.photo-item').forEach(item => {
+        item.classList.toggle('hidden', f !== 'all' && item.dataset.cat !== f);
+      });
+    });
+  });
+</script>
+</body>
+</html>
